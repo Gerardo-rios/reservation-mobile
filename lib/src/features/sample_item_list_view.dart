@@ -8,19 +8,18 @@ import 'sample_item_details_view.dart';
 class SampleItemListView extends StatelessWidget {
   const SampleItemListView({
     super.key,
-    this.items = const [SampleItem(1), SampleItem(2), SampleItem(3)],
+    this.items = const <SampleItem>[SampleItem(1), SampleItem(2), SampleItem(3)],
   });
 
-  static const routeName = '/';
+  static const String routeName = '/';
 
   final List<SampleItem> items;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: const Text('Sample Items'),
-        actions: [
+        actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
@@ -46,7 +45,7 @@ class SampleItemListView extends StatelessWidget {
         restorationId: 'sampleItemListView',
         itemCount: items.length,
         itemBuilder: (BuildContext context, int index) {
-          final item = items[index];
+          final SampleItem item = items[index];
 
           return ListTile(
             title: Text('SampleItem ${item.id}'),
@@ -67,5 +66,4 @@ class SampleItemListView extends StatelessWidget {
         },
       ),
     );
-  }
 }

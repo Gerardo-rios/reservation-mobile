@@ -9,13 +9,12 @@ import 'settings_controller.dart';
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key, required this.controller});
 
-  static const routeName = '/settings';
+  static const String routeName = '/settings';
 
   final SettingsController controller;
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
         title: const Text('Settings'),
       ),
@@ -30,15 +29,18 @@ class SettingsView extends StatelessWidget {
           value: controller.themeMode,
           // Call the updateThemeMode method any time the user selects a theme.
           onChanged: controller.updateThemeMode,
-          items: const [
+          items: const <DropdownMenuItem<ThemeMode>>[
+            // ignore: always_specify_types
             DropdownMenuItem(
               value: ThemeMode.system,
               child: Text('System Theme'),
             ),
+            // ignore: always_specify_types
             DropdownMenuItem(
               value: ThemeMode.light,
               child: Text('Light Theme'),
             ),
+            // ignore: always_specify_types
             DropdownMenuItem(
               value: ThemeMode.dark,
               child: Text('Dark Theme'),
@@ -47,5 +49,4 @@ class SettingsView extends StatelessWidget {
         ),
       ),
     );
-  }
 }
