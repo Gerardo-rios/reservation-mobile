@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'features/sample_item_details_view.dart';
-import 'features/sample_item_list_view.dart';
-import 'settings/settings_controller.dart';
-import 'settings/settings_view.dart';
-import 'package:reservation_fields_app/src/constants/theme.dart';
+import 'package:reservation_fields_app/src/controllers/settings_controller.dart';
+import 'package:reservation_fields_app/src/constants/constants.dart';
+import 'package:reservation_fields_app/src/views/splash_screen/splash.dart';
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
@@ -35,21 +33,16 @@ class MyApp extends StatelessWidget {
           ],
           onGenerateTitle: (BuildContext context) =>
               AppLocalizations.of(context)!.appTitle,
-          theme: FieldsAppTheme.lightTheme,
-          darkTheme: FieldsAppTheme.darkTheme,
+          theme: Constants.lightTheme,
+          darkTheme: Constants.darkTheme,
           themeMode: settingsController.themeMode,
           onGenerateRoute: (RouteSettings routeSettings) =>
               MaterialPageRoute<void>(
             settings: routeSettings,
             builder: (BuildContext context) {
               switch (routeSettings.name) {
-                case SettingsView.routeName:
-                  return SettingsView(controller: settingsController);
-                case SampleItemDetailsView.routeName:
-                  return const SampleItemDetailsView();
-                case SampleItemListView.routeName:
                 default:
-                  return const SampleItemListView();
+                  return SplashScreen();
               }
             },
           ),
