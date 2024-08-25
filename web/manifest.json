@@ -1,6 +1,6 @@
 {
-    "name": "reservation_fields_app",
-    "short_name": "reservation_fields_app",
+    "name": "SportSpot",
+    "short_name": "SportSpot",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
