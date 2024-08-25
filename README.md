@@ -1,4 +1,4 @@
-# reservation_fields_app
+# SportSpot
 
 A new Flutter project. Mobile App of IOET university 2.0 Project
 

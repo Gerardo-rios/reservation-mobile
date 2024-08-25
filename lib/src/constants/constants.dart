@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reservation_fields_app/src/constants/theme.dart';
+import 'package:SportSpot/src/constants/theme.dart';
 
 class Constants {
   // App

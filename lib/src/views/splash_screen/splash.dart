@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:reservation_fields_app/src/constants/image_strings.dart';
-import 'package:reservation_fields_app/src/constants/text_strings.dart';
-import 'package:reservation_fields_app/src/constants/sizes.dart';
-import 'package:reservation_fields_app/src/controllers/splash_screen_controller.dart';
+import 'package:SportSpot/src/constants/image_strings.dart';
+import 'package:SportSpot/src/constants/text_strings.dart';
+import 'package:SportSpot/src/constants/sizes.dart';
+import 'package:SportSpot/src/controllers/splash_screen_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
 
   final SplashScreenController splashController =
       Get.put(SplashScreenController());
+
+  static const String routeName = '/';
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +37,14 @@ class SplashScreen extends StatelessWidget {
                   opacity: splashController.animate.value ? 1 : 0,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children: <Widget>[
                       Text(
                         tAppName,
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.headlineLarge,
                       ),
                       Text(
                         tAppTag,
-                        style: Theme.of(context).textTheme.headlineSmall,
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
                     ],
                   ),
@@ -58,6 +60,7 @@ class SplashScreen extends StatelessWidget {
                   opacity: splashController.animate.value ? 1 : 0,
                   child: const Image(
                     image: AssetImage(tSplashImage),
+                    height: 200,
                   ),
                 ),
               )),

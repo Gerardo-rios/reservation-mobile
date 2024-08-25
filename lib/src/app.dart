@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
-import 'package:reservation_fields_app/src/controllers/settings_controller.dart';
-import 'package:reservation_fields_app/src/constants/constants.dart';
-import 'package:reservation_fields_app/src/views/splash_screen/splash.dart';
+import 'package:SportSpot/src/controllers/settings_controller.dart';
+import 'package:SportSpot/src/constants/constants.dart';
+import 'package:SportSpot/src/views/splash_screen/splash.dart';
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
@@ -31,8 +31,12 @@ class MyApp extends StatelessWidget {
             Locale('en', 'US'),
             Locale('es', 'ES'),
           ],
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context)!.appTitle,
+          debugShowCheckedModeBanner: false,
+          onGenerateTitle: (BuildContext context) {
+            final AppLocalizations? appLocalizations =
+                AppLocalizations.of(context);
+            return appLocalizations?.appTitle ?? 'Sport Spots';
+          },
           theme: Constants.lightTheme,
           darkTheme: Constants.darkTheme,
           themeMode: settingsController.themeMode,
