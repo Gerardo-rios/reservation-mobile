@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:SportSpot/src/constants/image_strings.dart';
-import 'package:SportSpot/src/constants/sizes.dart';
+import 'package:sport_spot/src/constants/image_strings.dart';
+import 'package:sport_spot/src/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  static const String routeName = '/home';
 
   @override
   Widget build(BuildContext context) => Scaffold(

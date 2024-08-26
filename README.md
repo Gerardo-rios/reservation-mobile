@@ -1,4 +1,4 @@
-# SportSpot
+# sport_spot
 
 A new Flutter project. Mobile App of IOET university 2.0 Project
 

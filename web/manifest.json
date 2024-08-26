@@ -1,6 +1,6 @@
 {
-    "name": "SportSpot",
-    "short_name": "SportSpot",
+    "name": "sport_spot",
+    "short_name": "sport_spot",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

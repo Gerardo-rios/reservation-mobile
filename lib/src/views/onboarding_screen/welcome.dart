@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:SportSpot/src/constants/constants.dart';
-import 'package:SportSpot/src/constants/sizes.dart';
-import 'package:SportSpot/src/constants/image_strings.dart';
-import 'package:SportSpot/src/constants/text_strings.dart';
+import 'package:sport_spot/src/constants/constants.dart';
+import 'package:sport_spot/src/constants/sizes.dart';
+import 'package:sport_spot/src/constants/image_strings.dart';
+import 'package:sport_spot/src/constants/text_strings.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
+
+  static const String routeName = '/welcome';
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   Text(
                     tWelcomeSubTitle,
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
               ),

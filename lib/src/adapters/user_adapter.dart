@@ -1,4 +1,4 @@
-import 'package:SportSpot/src/models/user_model.dart';
+import 'package:sport_spot/src/models/user_model.dart';
 
 class UserAdapter {
   Future<User> fromSecureStorage(Map<String, String> secureStoreData) async =>

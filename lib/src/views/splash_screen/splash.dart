@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:SportSpot/src/constants/image_strings.dart';
-import 'package:SportSpot/src/constants/text_strings.dart';
-import 'package:SportSpot/src/constants/sizes.dart';
-import 'package:SportSpot/src/controllers/splash_screen_controller.dart';
+import 'package:sport_spot/src/constants/image_strings.dart';
+import 'package:sport_spot/src/constants/text_strings.dart';
+import 'package:sport_spot/src/constants/sizes.dart';
+import 'package:sport_spot/src/controllers/splash_screen_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   SplashScreen({super.key});
