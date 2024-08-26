@@ -40,3 +40,6 @@ const String tRegisterSubtitle =
 const String tAlreadyHaveAnAccount = 'Already have an account? ';
 const String tFullName = 'Full Name';
 const String tPhoneNo = 'Phone Number';
+const String tAddress = 'Street Address';
+const String tPhotoPath = 'Avatar Photo';
+const String tUsername = 'Username';

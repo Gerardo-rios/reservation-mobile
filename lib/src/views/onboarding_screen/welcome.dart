@@ -4,6 +4,7 @@ import 'package:sport_spot/src/constants/sizes.dart';
 import 'package:sport_spot/src/constants/image_strings.dart';
 import 'package:sport_spot/src/constants/text_strings.dart';
 import 'package:sport_spot/src/views/login/login_screen.dart';
+import 'package:sport_spot/src/views/register/signup_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -45,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                   Expanded(
                       child: OutlinedButton(
                           onPressed: () {
-                            Navigator.pushReplacement(
+                            Navigator.push(
                                 context,
                                 // ignore: always_specify_types
                                 MaterialPageRoute(
@@ -59,7 +60,12 @@ class WelcomeScreen extends StatelessWidget {
                   Expanded(
                       child: ElevatedButton(
                           onPressed: () {
-                            // Register Redirect
+                            Navigator.push(
+                                context,
+                                // ignore: always_specify_types
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const SignUp()));
                           },
                           child: Text(tRegister.toUpperCase())))
                 ],
