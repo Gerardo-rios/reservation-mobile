@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_spot/src/constants/text_strings.dart';
+import 'package:sport_spot/src/views/register/signup_screen.dart';
 
 class LoginFooterWidget extends StatelessWidget {
   const LoginFooterWidget({
@@ -11,7 +12,11 @@ class LoginFooterWidget extends StatelessWidget {
         children: <Widget>[
           TextButton(
               onPressed: () {
-                // TODO: Navigate to Register Screen
+                Navigator.push(
+                    context,
+                    // ignore: always_specify_types
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => const SignUp()));
               },
               child: Text.rich(TextSpan(
                   text: tDontHaveAnAccount,
