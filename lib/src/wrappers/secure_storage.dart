@@ -1,9 +1,17 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:SportSpot/src/models/user_model.dart';
+import 'package:sport_spot/src/models/user_model.dart';
 
 class SecureStorage {
-  static late String accessTokenKey;
-  static late User user;
+  static String accessTokenKey = 'access_token';
+  static User user = User(
+      email: '',
+      name: '',
+      username: '',
+      token: '',
+      address: '',
+      phone: '',
+      photo: '',
+      role: '');
 
   static AndroidOptions _getAndroidOptions() => const AndroidOptions(
         encryptedSharedPreferences: true,

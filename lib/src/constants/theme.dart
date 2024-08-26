@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:SportSpot/src/constants/constants.dart';
-import 'package:SportSpot/src/constants/sizes.dart';
+import 'package:sport_spot/src/constants/constants.dart';
+import 'package:sport_spot/src/constants/sizes.dart';
 
 class FieldsAppTheme {
   static ThemeData lightTheme = ThemeData(
