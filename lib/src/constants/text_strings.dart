@@ -43,3 +43,6 @@ const String tPhoneNo = 'Phone Number';
 const String tAddress = 'Street Address';
 const String tPhotoPath = 'Avatar Photo';
 const String tUsername = 'Username';
+const String tImagePicker = 'Pick an image';
+const String tPhotoPicker = 'Take a picture';
+const String tNoImageSelected = 'No image selected';
