@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sport_spot/src/controllers/photo_picker_controller.dart';
 import 'package:sport_spot/src/controllers/signup_screen_controller.dart';
 import 'package:sport_spot/src/constants/sizes.dart';
 import 'package:sport_spot/src/constants/text_strings.dart';
+import 'package:sport_spot/src/widgets/photo_picker_widget.dart';
 
 class SignUpFormWidget extends StatelessWidget {
   const SignUpFormWidget({
@@ -12,12 +14,14 @@ class SignUpFormWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final SignUpController registerController = Get.put(SignUpController());
+    final PhotoPickerController photoController =
+        Get.put(PhotoPickerController());
     late String name = '';
     late String email = '';
     late String phoneNumber = '';
     late String password = '';
     late String username = '';
-    late String photoPath = '';
+    String? photoPath = photoController.imagePath.value;
     late String address = '';
     const String roleName = 'user';
     return Container(
@@ -100,15 +104,7 @@ class SignUpFormWidget extends StatelessWidget {
             const SizedBox(
               height: tFormHeight - 20,
             ),
-            TextFormField(
-              decoration: const InputDecoration(
-                label: Text(tPhotoPath),
-                prefixIcon: Icon(Icons.image_outlined),
-              ),
-              onChanged: (String value) => <String>{
-                photoPath = value,
-              },
-            ),
+            const PhotoPickerWidget(),
             const SizedBox(
               height: tFormHeight - 20,
             ),
