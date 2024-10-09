@@ -64,14 +64,14 @@ class LoginFormWidget extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: TextButton(
                   onPressed: () {
-                    //Forgot password logic
+                    //TODO: Forgot password logic
                   },
                   child: const Text(tForgotPassword))),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
                 onPressed: () {
-                  // login logic
+                  loginController.login(email, password);
                 },
                 child: Text(tLogin.toUpperCase())),
           ),

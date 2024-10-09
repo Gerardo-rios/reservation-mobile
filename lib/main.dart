@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'src/app.dart';
 import 'src/controllers/settings_controller.dart';
@@ -8,6 +9,7 @@ import 'src/services/settings_service.dart';
 void main() async {
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
+  await dotenv.load();
   final SettingsController settingsController =
       SettingsController(SettingsService());
 
@@ -19,6 +21,7 @@ void main() async {
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: <SystemUiOverlay>[]);
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: <SystemUiOverlay>[]);
   runApp(MyApp(settingsController: settingsController));
 }
