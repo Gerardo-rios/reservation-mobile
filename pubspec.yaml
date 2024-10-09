@@ -12,10 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.1.0
   flutter_localizations:
     sdk: flutter
   flutter_secure_storage: ^9.2.2
   get: ^4.6.6
+  http: ^1.2.2
   image_picker: ^1.1.2
   liquid_swipe: ^3.1.0
   path_provider: ^2.1.4

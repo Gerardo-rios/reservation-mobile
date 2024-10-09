@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sport_spot/src/constants/image_strings.dart';
 import 'package:sport_spot/src/constants/sizes.dart';
 import 'package:sport_spot/src/constants/text_strings.dart';
 import 'package:sport_spot/src/widgets/forms/form_header_widget.dart';

@@ -21,7 +21,7 @@ class SignUpFormWidget extends StatelessWidget {
     late String phoneNumber = '';
     late String password = '';
     late String username = '';
-    String? photoPath = photoController.imagePath.value;
+    final String? photoPath = photoController.imagePath.value;
     late String address = '';
     const String roleName = 'user';
     return Container(
