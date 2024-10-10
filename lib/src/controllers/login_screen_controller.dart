@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
+import 'package:sport_spot/src/controllers/auth_controller.dart';
 import 'package:sport_spot/src/models/auth_model.dart';
 import 'package:sport_spot/src/services/auth/login.dart';
-import 'package:sport_spot/src/views/home/home_screen.dart';
 import 'package:sport_spot/src/wrappers/exception_handler.dart';
-import 'package:sport_spot/src/wrappers/secure_storage.dart';
 
 class LoginController extends GetxController {
   static LoginController get find => Get.find();
   RxBool isObscure = true.obs;
+  final AuthController _authController = Get.find<AuthController>();
 
   login(String userEmail, String userPassword) async {
     if (userEmail.isNotEmpty && userPassword.isNotEmpty) {
@@ -18,11 +18,7 @@ class LoginController extends GetxController {
         final AuthUser? userLogged =
             await loginRequest(userEmail, userPassword);
         if (userLogged != null) {
-          await SecureStorage.storage.write(
-              key: SecureStorage.accessTokenKey, value: userLogged.token);
-          await SecureStorage.storage.write(
-              key: SecureStorage.authUserKey, value: userLogged.account);
-          Get.to(const HomeScreen());
+          _authController.login(userLogged.token, userLogged.account);
         }
       } on Exception catch (e) {
         handleException(e);
