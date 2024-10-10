@@ -21,9 +21,8 @@ class SignUpFormWidget extends StatelessWidget {
     late String phoneNumber = '';
     late String password = '';
     late String username = '';
-    final String? photoPath = photoController.imagePath.value;
+    late String photoPath = '';
     late String address = '';
-    const String roleName = 'user';
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),
       child: Form(
@@ -60,6 +59,7 @@ class SignUpFormWidget extends StatelessWidget {
                 prefixIcon: Icon(Icons.numbers),
               ),
               onChanged: (String value) => <String>{
+                //TODO: Validate phone number input to be only numbers
                 phoneNumber = value,
               },
             ),
@@ -124,7 +124,9 @@ class SignUpFormWidget extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: () {
-                    // TODO: Register Logic
+                    photoPath = photoController.imagePath.value!;
+                    registerController.register(name, email, password, username,
+                        photoPath, phoneNumber, address);
                   },
                   child: Text(tRegister.toUpperCase())),
             )
