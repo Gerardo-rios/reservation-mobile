@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:get/get.dart';
+import 'package:sport_spot/src/controllers/auth_controller.dart';
 
 import 'src/app.dart';
 import 'src/controllers/settings_controller.dart';
@@ -23,5 +25,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: <SystemUiOverlay>[]);
+  Get.put(AuthController());
   runApp(MyApp(settingsController: settingsController));
 }
