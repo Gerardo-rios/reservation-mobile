@@ -1,15 +1,9 @@
-import 'package:sport_spot/src/models/user_model.dart';
+import 'package:sport_spot/src/models/auth_model.dart';
 
-class UserAdapter {
-  Future<User> fromSecureStorage(Map<String, String> secureStoreData) async =>
-      User(
-        token: secureStoreData['token']!,
-        name: secureStoreData['name']!,
-        email: secureStoreData['email']!,
-        username: secureStoreData['username']!,
-        role: secureStoreData['role']!,
-        phone: secureStoreData['phone']!,
-        address: secureStoreData['address']!,
-        photo: secureStoreData['photo']!,
+class AuthUserAdapter {
+  Future<AuthUser> fromSecureStorage(String token, String account) async =>
+      AuthUser(
+        token: token,
+        account: account,
       );
 }
