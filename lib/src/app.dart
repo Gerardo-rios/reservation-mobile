@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get/get.dart';
 
 import 'package:sport_spot/src/controllers/settings_controller.dart';
 import 'package:sport_spot/src/constants/constants.dart';
 import 'package:sport_spot/src/views/splash_screen/splash.dart';
 
-/// The Widget that configures your application.
 class MyApp extends StatelessWidget {
   const MyApp({
     super.key,
@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => ListenableBuilder(
         listenable: settingsController,
-        builder: (BuildContext context, Widget? child) => MaterialApp(
-          restorationScopeId: 'app',
+        builder: (BuildContext context, Widget? child) => GetMaterialApp(
           // ignore: always_specify_types
           localizationsDelegates: const <LocalizationsDelegate>[
             AppLocalizations.delegate,
