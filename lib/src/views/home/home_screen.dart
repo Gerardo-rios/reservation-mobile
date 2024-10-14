@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sport_spot/src/constants/image_strings.dart';
-import 'package:sport_spot/src/constants/sizes.dart';
-import 'package:sport_spot/src/controllers/auth_controller.dart';
+import 'package:sport_spot/src/controllers/home_screen_controller.dart';
+import 'package:sport_spot/src/views/home/history_page.dart';
+import 'package:sport_spot/src/views/home/home_page.dart';
+import 'package:sport_spot/src/views/home/profile_page.dart';
+import 'package:sport_spot/src/views/home/reservations_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,36 +13,52 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AuthController authController = Get.find<AuthController>();
+    final HomeController homeController = Get.put(HomeController());
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Main Screen'),
+        title: const Text('SportSpot'),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: authController.logout,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              // TODO: Implement notifications
+            },
           ),
         ],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-              tAppLogo,
-              width: tDefaultSize * 0.5,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Get.toNamed('/welcome');
-              },
-              child: const Text('Go to Welcome Screen'),
-            ),
-          ],
-        ),
-      ),
+      body: Obx(() => IndexedStack(
+            index: homeController.selectedIndex.value,
+            children: const <Widget>[
+              HomePage(),
+              ReservationsPage(),
+              HistoryPage(),
+              ProfilePage(),
+            ],
+          )),
+      bottomNavigationBar: Obx(() => BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: homeController.selectedIndex.value,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_today),
+                label: 'Bookings',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.history),
+                label: 'History',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            onTap: homeController.changePage,
+          )),
     );
   }
 }
