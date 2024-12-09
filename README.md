@@ -1,6 +1,6 @@
 # sport_spot
 
-A new Flutter project. Mobile App of IOET university 2.0 Project
+A new Flutter project. Mobile App of reservation app system
 
 ## Getting Started
 
